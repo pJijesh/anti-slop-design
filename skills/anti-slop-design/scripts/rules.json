@@ -1,0 +1,38 @@
+{
+  "tiers": {
+    "block": "Do not ship. Accessibility, honesty and basic correctness. Fix it or record why it does not apply.",
+    "tell": "A common default that makes a page read as machine-made. Replace it with a deliberate choice, or record why it is deliberate here.",
+    "note": "Worth a look. A pattern that is often a symptom, not a fault."
+  },
+  "rules": [
+    {"id": "no-viewport", "tier": "block", "title": "No viewport meta tag", "why": "Phones render the desktop layout shrunk down.", "fix": "Add <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">."},
+    {"id": "no-lang", "tier": "block", "title": "No lang attribute on <html>", "why": "Screen readers and translation tools guess the language.", "fix": "Add lang=\"en-GB\" or the right code."},
+    {"id": "img-no-alt", "tier": "block", "title": "Image without alt text", "why": "Content is invisible to screen readers; decorative images need alt=\"\".", "fix": "Describe the image, or use alt=\"\" if it is decoration."},
+    {"id": "focus-removed", "tier": "block", "title": "Focus outline removed with no replacement", "why": "Keyboard users lose track of where they are.", "fix": "Style :focus-visible with a clear ring instead of removing the outline."},
+    {"id": "no-reduced-motion", "tier": "block", "title": "Animation with no prefers-reduced-motion handling", "why": "Motion can cause real discomfort for some people.", "fix": "Wrap motion in @media (prefers-reduced-motion: no-preference) or switch it off in the reduce case."},
+    {"id": "placeholder-text", "tier": "block", "title": "Placeholder copy left in", "why": "Lorem ipsum or template text means the page is not finished.", "fix": "Write the real copy, or leave the section out."},
+    {"id": "invented-claims", "tier": "block", "title": "Statistics or claims with no source", "why": "Figures such as '10k+ users' or '99.9% uptime' are invented unless you can point to where they come from.", "fix": "Use a figure you can source and cite it, or describe what the thing does instead."},
+    {"id": "ignore-without-reason", "tier": "block", "title": "An override with no reason", "why": "An ignore comment must say why, or it is just hiding the problem.", "fix": "Write: anti-slop-ignore <rule-id>: <reason>."},
+    {"id": "gradient-purple", "tier": "tell", "title": "Purple or indigo gradient", "why": "The single most common default colour treatment from language models.", "fix": "Choose a colour from the subject (a material, a place, a brand, a print tradition) and use it flat."},
+    {"id": "gradient-text", "tier": "tell", "title": "Gradient-filled headline text", "why": "Clipped gradient text is a reflex used to make a heading feel designed.", "fix": "Set the heading in one colour and get emphasis from size, weight or position."},
+    {"id": "default-font", "tier": "tell", "title": "Default typeface as the main face", "why": "Inter, Roboto, Poppins or the bare system stack signals that no typographic choice was made.", "fix": "Pick a face for a reason and pair it with a contrasting one; see references/typography.md."},
+    {"id": "glass", "tier": "tell", "title": "Frosted glass panels", "why": "Blurred translucent cards are a trend default that hurts contrast.", "fix": "Use a solid surface and a border, and keep the glass for places where seeing through helps."},
+    {"id": "big-radius", "tier": "tell", "title": "Large radius on everything", "why": "Uniform rounded-2xl corners make every element the same soft shape.", "fix": "Choose one radius scale, keep most things sharper, and round only what should feel touchable."},
+    {"id": "shadow-stack", "tier": "tell", "title": "Heavy shadows on many elements", "why": "Large soft shadows everywhere flatten hierarchy into a pile of floating cards.", "fix": "Use borders and spacing for grouping, and a shadow only for things that truly float."},
+    {"id": "hover-scale", "tier": "tell", "title": "Scale-up on hover as the hover effect", "why": "A hover:scale-105 on every card is a stock interaction.", "fix": "Change what matters (underline, colour, offset, reveal) and keep layout still."},
+    {"id": "emoji-icons", "tier": "tell", "title": "Emoji used as icons", "why": "Emoji in headings, buttons and feature lists read as filler and render differently on every platform.", "fix": "Use a consistent icon set, or no icons."},
+    {"id": "eyebrow-labels", "tier": "tell", "title": "Small uppercase label above every heading", "why": "The tracked-out eyebrow is repeated on every section by habit.", "fix": "Keep one at most, and only where it carries information."},
+    {"id": "badge-pill", "tier": "tell", "title": "Announcement pill above the headline", "why": "'New', 'Now in beta' and sparkle pills are a template opener.", "fix": "Cut it, or say something specific and dated in the headline itself."},
+    {"id": "buzzwords", "tier": "tell", "title": "Stock marketing vocabulary", "why": "Words such as seamless, elevate, unlock and supercharge carry no information.", "fix": "Say what the product does, to whom, in plain words."},
+    {"id": "dash-copy", "tier": "tell", "title": "Long dashes through the copy", "why": "Several em or en dashes in page text is a recognisable machine habit.", "fix": "Use full stops, commas, colons or brackets."},
+    {"id": "default-palette", "tier": "tell", "title": "Default Tailwind indigo, violet or purple", "why": "The framework's stock accent colours appear on a huge share of generated pages.", "fix": "Define your own palette as variables and name the colours for what they are for."},
+    {"id": "ambient-blobs", "tier": "tell", "title": "Blurred glowing blobs in the background", "why": "Large blurred circles are a decorative reflex with no meaning.", "fix": "Use real imagery, a pattern with a purpose, or plain space."},
+    {"id": "stock-names", "tier": "tell", "title": "Stock person names", "why": "Names such as Sarah Chen or John Doe are the first ones a model reaches for.", "fix": "Use real, permitted names, or remove the person."},
+    {"id": "testimonials", "tier": "tell", "title": "Testimonial section", "why": "A row of quotes with names and job titles is almost always invented in generated pages.", "fix": "Keep it only if the quotes are real and you have permission, and link to the source."},
+    {"id": "triplet-grid", "tier": "note", "title": "Three identical cards in a row", "why": "Icon, heading and sentence in three equal columns is the default way to list features.", "fix": "Vary the scale and the order, or write it as prose or a table."},
+    {"id": "centred-everything", "tier": "note", "title": "Almost everything centred", "why": "Centring every block removes the reading edge and any sense of structure.", "fix": "Set body text left aligned on a clear column, and centre only short, single lines."},
+    {"id": "generic-cta", "tier": "note", "title": "Generic button labels", "why": "'Get started' and 'Learn more' say nothing about what happens next.", "fix": "Name the action: 'Download the checklist', 'Book a 20 minute call'."},
+    {"id": "no-main", "tier": "note", "title": "No <main> landmark", "why": "Assistive technology uses landmarks to jump to the content.", "fix": "Wrap the primary content in <main>."},
+    {"id": "h1-count", "tier": "note", "title": "Not exactly one <h1>", "why": "A page needs one top-level heading that says what it is.", "fix": "Use one <h1> and keep the rest in order."}
+  ]
+}

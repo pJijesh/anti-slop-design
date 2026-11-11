@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pilotlight: a status page for small teams</title>
+<style>
+  :root {
+    --paper: #f4efe4;
+    --ink: #1b1a17;
+    --ink-soft: #4a463d;
+    --rule: #cfc6b2;
+    --signal: #b8431c;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 19px; line-height: 1.55; }
+  a { color: var(--signal); text-underline-offset: 0.18em; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  header, main, footer { width: min(44rem, 100% - 2.5rem); margin-inline: auto; }
+  header { display: flex; justify-content: space-between; align-items: baseline; padding-top: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--ink); font-family: var(--mono); font-size: 0.85rem; }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1.05; letter-spacing: -0.02em; margin: 3rem 0 1rem; max-width: 14em; }
+  h2 { font-size: 1.15rem; font-family: var(--mono); font-weight: 600; margin: 3rem 0 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--rule); }
+  .lede { font-size: 1.3rem; max-width: 34rem; color: var(--ink-soft); }
+  .action { display: inline-block; margin-top: 1.25rem; padding: 0.7rem 1.1rem; background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 0.95rem; text-decoration: none; border-radius: 2px; }
+  .action:hover { background: var(--signal); }
+  table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.55rem 0.5rem 0.55rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; }
+  .down { color: var(--signal); font-weight: 600; }
+  code { font-family: var(--mono); font-size: 0.88em; background: #e8e1d0; padding: 0.05em 0.3em; }
+  footer { padding-top: 2rem; padding-bottom: 3rem; margin-top: 3rem; border-top: 2px solid var(--ink); font-family: var(--mono); font-size: 0.8rem; color: var(--ink-soft); }
+  @media (prefers-reduced-motion: no-preference) { .action { transition: background-color 120ms ease-out; } }
+</style>
+</head>
+<body>
+<header><strong>Pilotlight</strong><span>Example page, invented product</span></header>
+<main>
+  <h1>A status page your customers can read without asking you.</h1>
+  <p class="lede">Pilotlight checks your public URLs every minute and writes a plain page that says what is up, what is down and since when. It does not do anything else.</p>
+  <a class="action" href="#how">Read how a check works</a>
+
+  <h2 id="how">What one check records</h2>
+  <p>Every minute, from three places, it requests the URL and keeps the result. A check fails if the response takes longer than ten seconds, returns a 5xx status, or presents a certificate that has expired.</p>
+  <table>
+    <thead><tr><th scope="col">Service</th><th scope="col">State</th><th scope="col">Since</th></tr></thead>
+    <tbody>
+      <tr><td>Booking site</td><td>Up</td><td>14 days</td></tr>
+      <tr><td>Payments callback</td><td class="down">Down</td><td>09:42 today</td></tr>
+      <tr><td>Staff login</td><td>Up</td><td>3 days</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What it will not do</h2>
+  <p>It will not guess at causes, page you in the night or draw a chart of your response times. If you want those, use something larger. The checks are in one file, <code>checks.toml</code>, and the page is plain HTML you can host anywhere.</p>
+</main>
+<footer>Pilotlight is a fictional product used to show a page built with the anti-slop-design skill.</footer>
+</body>
+</html>

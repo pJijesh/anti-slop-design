@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "anti-slop-design"
+abstract: "A design skill for Claude Code, Codex, Cursor and OpenCode that steers pages away from the generic AI-generated look, with a zero-dependency linter."
+type: software
+authors:
+  - family-names: "Puliyappottammal"
+    given-names: "Jijesh"
+repository-code: "https://github.com/pJijesh/anti-slop-design"
+url: "https://github.com/pJijesh/anti-slop-design"
+license: MIT
+version: 1.0.0
+date-released: "2026-11-11"
+keywords:
+  - agent-skills
+  - claude-code
+  - codex
+  - cursor
+  - opencode
+  - design
+  - linter

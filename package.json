@@ -1,0 +1,17 @@
+{
+  "name": "anti-slop-design",
+  "version": "1.0.0",
+  "description": "A design skill for Claude Code, Codex, Cursor and OpenCode that steers pages away from the generic AI-generated look, with a zero-dependency linter.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Puliyappottammal Jijesh",
+  "repository": { "type": "git", "url": "git+https://github.com/pJijesh/anti-slop-design.git" },
+  "bin": { "anti-slop-lint": "skills/anti-slop-design/scripts/tells.mjs" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check",
+    "test": "node --test",
+    "lint:examples": "node skills/anti-slop-design/scripts/tells.mjs examples/after.html"
+  },
+  "engines": { "node": ">=18" }
+}

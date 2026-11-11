@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pilotlight</title>
+<style>
+  body { font-family: 'Inter', sans-serif; margin: 0; color: #fff; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+  .hero { text-align: center; padding: 120px 24px; position: relative; overflow: hidden; }
+  .blob { position: absolute; width: 400px; height: 400px; border-radius: 9999px; filter: blur(80px); background: rgba(255,255,255,0.2); top: -100px; left: -100px; }
+  .pill { display: inline-block; background: rgba(255,255,255,0.15); border-radius: 9999px; padding: 6px 16px; font-size: 14px; }
+  h1 { font-size: 64px; background: linear-gradient(90deg, #fff, #c4b5fd); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .card { background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border-radius: 24px; padding: 32px; box-shadow: 0 25px 50px rgba(0,0,0,0.25); transition: transform .3s; }
+  .card:hover { transform: scale(1.05); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  .label { text-transform: uppercase; letter-spacing: 0.2em; font-size: 12px; }
+  button { outline: none; border: 0; border-radius: 9999px; padding: 14px 28px; background: #fff; color: #5b21b6; font-size: 16px; }
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="blob"></div>
+  <span class="pill">✨ New: AI-powered alerts</span>
+  <h1>Supercharge your uptime monitoring &mdash; seamlessly</h1>
+  <p>Elevate your reliability with a cutting-edge, all-in-one platform that empowers teams to unlock peak performance &mdash; in minutes.</p>
+  <button>Get Started</button> <button>Learn More</button>
+  <p>Trusted by 10,000+ teams · 99.9% uptime · Rated 4.9/5</p>
+</section>
+<section>
+  <p class="label" style="text-align:center">Features</p>
+  <h2 style="text-align:center">Everything you need</h2>
+  <div class="grid">
+    <div class="card"><h3>⚡ Lightning fast</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+    <div class="card"><h3>🔒 Secure by default</h3><p>Enterprise-grade security you can rely on.</p></div>
+    <div class="card"><h3>🚀 Scales with you</h3><p>From startup to enterprise, we have you covered.</p></div>
+  </div>
+</section>
+<section style="text-align:center">
+  <p class="label">Testimonials</p>
+  <div class="testimonial">
+    <p>"Pilotlight transformed how we work. Absolutely game-changing."</p>
+    <p>Sarah Chen, CEO at Acme Inc.</p>
+    <img src="avatar.png">
+  </div>
+  <button>Get Started</button>
+</section>
+</body>
+</html>
