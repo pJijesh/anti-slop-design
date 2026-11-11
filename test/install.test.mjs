@@ -85,3 +85,11 @@ test('the CLI handles unknown targets and --dry-run', () => {
 test('committed generated files are current', () => {
   for (const [path, text] of Object.entries(outputs())) assert.equal(readFileSync(path, 'utf8'), text, path);
 });
+
+test('the CLI accepts a target as the first argument when --dir is not given', () => {
+  const r = spawnSync(process.execPath, [join(ROOT, 'scripts/install.mjs'), 'all', '--dry-run'], { encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stderr);
+  for (const t of TARGETS) assert.ok(r.stdout.includes(t));
+  const one = spawnSync(process.execPath, [join(ROOT, 'scripts/install.mjs'), 'claude', '--dry-run'], { encoding: 'utf8' });
+  assert.equal(one.status, 0, one.stderr);
+});
