@@ -62,8 +62,8 @@ export function apply(actions, dryRun = false) {
 
 function main(argv) {
   const args = argv.slice(2);
-  const targets = args.filter((a) => !a.startsWith('--') && a !== args[args.indexOf('--dir') + 1]);
   const dirIdx = args.indexOf('--dir');
+  const targets = args.filter((a, i) => !a.startsWith('--') && !(dirIdx >= 0 && i === dirIdx + 1));
   const dir = resolve(dirIdx >= 0 ? args[dirIdx + 1] : process.cwd());
   const dry = args.includes('--dry-run');
   const isGlobal = args.includes('--global');
